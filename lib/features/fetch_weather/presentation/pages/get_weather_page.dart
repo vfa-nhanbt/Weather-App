@@ -73,5 +73,5 @@ class _GetWeatherPageState extends State<GetWeatherPage> {
 
 onTextSubmitted(BuildContext context, String cityName) {
   return Provider.of<WeatherStore>(context, listen: false)
-      .getWeatherByName(cityName);
+      .getWeatherByCityName(cityName);
 }

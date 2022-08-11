@@ -5,12 +5,12 @@ import 'package:flutter_weather_app/core/error/exceptions.dart';
 import '../../domain/entities/weather.dart';
 
 abstract class WeatherRemoteDataSource {
-  Future<Weather> getWeatherByName(String cityName);
+  Future<Weather> getWeatherByCityName(String cityName);
 }
 
 class WeatherRemoteDataSourceImp implements WeatherRemoteDataSource {
   @override
-  Future<Weather> getWeatherByName(String cityName) {
+  Future<Weather> getWeatherByCityName(String cityName) {
     return Future.delayed(const Duration(seconds: 1), () {
       final random = Random();
 

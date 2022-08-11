@@ -65,13 +65,13 @@ mixin _$WeatherStore on _WeatherStore, Store {
     });
   }
 
-  late final _$getWeatherByNameAsyncAction =
-      AsyncAction('_WeatherStore.getWeatherByName', context: context);
+  late final _$getWeatherByCityNameAsyncAction =
+      AsyncAction('_WeatherStore.getWeatherByCityName', context: context);
 
   @override
-  Future<dynamic> getWeatherByName(String cityName) {
-    return _$getWeatherByNameAsyncAction
-        .run(() => super.getWeatherByName(cityName));
+  Future<dynamic> getWeatherByCityName(String cityName) {
+    return _$getWeatherByCityNameAsyncAction
+        .run(() => super.getWeatherByCityName(cityName));
   }
 
   @override

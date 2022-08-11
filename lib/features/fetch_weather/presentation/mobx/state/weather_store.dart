@@ -42,7 +42,7 @@ abstract class _WeatherStore with Store {
   }
 
   @action
-  Future getWeatherByName(String cityName) async {
+  Future getWeatherByCityName(String cityName) async {
     errorMessage = null;
 
     /// Call get weather use case and return either failure or weather

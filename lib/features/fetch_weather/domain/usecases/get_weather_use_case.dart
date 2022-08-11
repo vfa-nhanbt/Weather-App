@@ -13,7 +13,7 @@ class GetWeatherUseCase implements UseCase<Weather, GetWeatherParams> {
 
   @override
   Future<Either<Failure, Weather>> call(GetWeatherParams params) async =>
-      await repository.getWeatherByName(params.cityName);
+      await repository.getWeatherByCityName(params.cityName);
 }
 
 class GetWeatherParams extends Equatable {

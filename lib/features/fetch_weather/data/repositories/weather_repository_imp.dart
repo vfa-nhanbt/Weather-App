@@ -14,9 +14,9 @@ class WeatherRepositoryImp implements WeatherRepository {
   WeatherRepositoryImp(this.dataSource);
 
   @override
-  Future<Either<Failure, Weather>> getWeatherByName(String cityName) async {
+  Future<Either<Failure, Weather>> getWeatherByCityName(String cityName) async {
     try {
-      return Right(await dataSource.getWeatherByName(cityName));
+      return Right(await dataSource.getWeatherByCityName(cityName));
     } on Exception catch (e) {
       return Left(
         ServerFailure(e is ServerException ? e.message : "Unexpected Error"),
