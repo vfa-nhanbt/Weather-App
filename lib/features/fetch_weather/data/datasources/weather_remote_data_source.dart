@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter_weather_app/core/error/exceptions.dart';
+import 'package:flutter_weather_app/features/fetch_weather/domain/entities/weather_main.dart';
 
 import '../../domain/entities/weather.dart';
 
@@ -22,8 +23,9 @@ class WeatherRemoteDataSourceImp implements WeatherRemoteDataSource {
 
       return Weather(
         id: "1",
-        cityName: cityName,
-        temp: randomTemp,
+        name: cityName,
+        timezone: 0,
+        main: WeatherMain(temp: randomTemp),
       );
     });
   }

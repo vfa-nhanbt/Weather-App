@@ -56,7 +56,7 @@ class _GetWeatherPageState extends State<GetWeatherPage> {
                           weatherStore!.errorMessage != null)
                       ? Text(weatherStore!.errorMessage ?? "Error")
                       : Text(
-                          "Thursday\n${weatherStore!.weather!.cityName}\n${weatherStore!.weather!.temp}"),
+                          "Thursday\n${weatherStore!.weather!.name}\n${weatherStore!.weather!.main.temp}"),
                   TextInputField(
                     controller: controller,
                     onSubmitted: (value) => onTextSubmitted(context, value),

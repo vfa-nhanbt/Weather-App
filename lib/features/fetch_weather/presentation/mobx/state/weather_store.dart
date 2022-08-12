@@ -2,6 +2,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_weather_app/core/mobx/base_state.dart';
 import 'package:flutter_weather_app/features/fetch_weather/domain/entities/weather.dart';
+import 'package:flutter_weather_app/features/fetch_weather/domain/entities/weather_main.dart';
 import 'package:flutter_weather_app/features/fetch_weather/domain/usecases/get_weather_use_case.dart';
 import 'package:mobx/mobx.dart';
 
@@ -54,8 +55,9 @@ abstract class _WeatherStore with Store {
     if (weatherOrFail == null) {
       return weather = const Weather(
         id: "id",
-        cityName: "cityName",
-        temp: -1,
+        name: "weather",
+        timezone: 0,
+        main: WeatherMain(temp: 0),
       );
     }
 
