@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter_weather_app/core/app/values.dart';
 import 'package:flutter_weather_app/core/error/exceptions.dart';
 
@@ -19,8 +20,8 @@ class WeatherRemoteDataSourceImp implements WeatherRemoteDataSource {
       }
 
       return Weather.fromJson(source);
-    } on Exception catch (e) {
-      throw ServerException(e.toString());
+    } on PlatformException catch (e) {
+      throw ServerException(e.message ?? "Unexpected error!");
     }
     /*
       return Future.delayed(const Duration(seconds: 1), () {
