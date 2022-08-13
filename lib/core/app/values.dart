@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+
 class AppValues {
   AppValues._internal();
 
@@ -9,4 +11,10 @@ class AppValues {
 
   /// Default API key to access open source weather API
   final String apiKey = "ca3ee9cafb369c683397c5bfc15edada";
+
+  /// Platform Channel
+  final jsonMethodChannel = const MethodChannel(
+    "com.example.flutter_weather_app/method-channel/json",
+    JSONMethodCodec(),
+  );
 }

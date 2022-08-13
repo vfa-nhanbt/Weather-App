@@ -1,12 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dartz/dartz.dart';
 import 'package:flutter_weather_app/core/mobx/base_state.dart';
-import 'package:flutter_weather_app/features/fetch_weather/domain/entities/weather.dart';
-import 'package:flutter_weather_app/features/fetch_weather/domain/entities/weather_main.dart';
-import 'package:flutter_weather_app/features/fetch_weather/domain/usecases/get_weather_use_case.dart';
+import 'package:flutter_weather_app/features/get_weather/domain/usecases/get_weather_use_case.dart';
 import 'package:mobx/mobx.dart';
 
 import '../../../../../core/error/failures.dart';
+import '../../../domain/entities/weather.dart';
+import '../../../domain/entities/weather_main.dart';
 
 part 'weather_store.g.dart';
 

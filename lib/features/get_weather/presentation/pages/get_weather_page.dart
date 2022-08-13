@@ -33,37 +33,39 @@ class _GetWeatherPageState extends State<GetWeatherPage> {
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
-      body: Padding(
-        padding: EdgeInsets.only(left: 32.w, right: 32.w),
-        child: Center(
-          child: Observer(
-            builder: (_) {
-              if (weatherStore!.state == BaseStoreState.initial) {
-                return TextInputField(
-                  controller: controller,
-                  onSubmitted: (value) => onTextSubmitted(context, value),
-                );
-              }
-              if (weatherStore!.state == BaseStoreState.loading) {
-                return const CircularProgressIndicator();
-              }
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  (weatherStore!.state == BaseStoreState.error ||
-                          weatherStore!.errorMessage != null)
-                      ? Text(weatherStore!.errorMessage ?? "Error")
-                      : Text(
-                          "Thursday\n${weatherStore!.weather!.name}\n${weatherStore!.weather!.main.temp}"),
-                  TextInputField(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(32.w, 16.h, 32.w, 16.h),
+          child: Center(
+            child: Observer(
+              builder: (_) {
+                if (weatherStore!.state == BaseStoreState.initial) {
+                  return TextInputField(
                     controller: controller,
                     onSubmitted: (value) => onTextSubmitted(context, value),
-                  ),
-                ],
-              );
-            },
+                  );
+                }
+                if (weatherStore!.state == BaseStoreState.loading) {
+                  return const CircularProgressIndicator();
+                }
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    (weatherStore!.state == BaseStoreState.error ||
+                            weatherStore!.errorMessage != null)
+                        ? Text(weatherStore!.errorMessage ?? "Error")
+                        : Text(
+                            "Thursday\n${weatherStore!.weather!.name}\n${weatherStore!.weather!.main.temp}"),
+                    TextInputField(
+                      controller: controller,
+                      onSubmitted: (value) => onTextSubmitted(context, value),
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ),
       ),

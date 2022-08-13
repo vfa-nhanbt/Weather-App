@@ -1,4 +1,4 @@
-import '../features/fetch_weather/domain/usecases/get_weather_injection_container.dart';
+import '../features/get_weather/domain/usecases/get_weather_injection_container.dart';
 
 class DependencyInitializer {
   DependencyInitializer._internal();

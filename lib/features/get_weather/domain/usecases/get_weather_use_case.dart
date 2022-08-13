@@ -3,8 +3,9 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_weather_app/core/error/failures.dart';
 import 'package:flutter_weather_app/core/usecases/base_use_case.dart';
-import 'package:flutter_weather_app/features/fetch_weather/domain/entities/weather.dart';
-import 'package:flutter_weather_app/features/fetch_weather/domain/repositories/weather_repository.dart';
+import 'package:flutter_weather_app/features/get_weather/domain/repositories/weather_repository.dart';
+
+import '../entities/weather.dart';
 
 class GetWeatherUseCase implements UseCase<Weather, GetWeatherParams> {
   final WeatherRepository repository;

@@ -5,7 +5,6 @@ import 'package:equatable/equatable.dart';
 
 class WeatherMain extends Equatable {
   final double temp;
-
   const WeatherMain({
     required this.temp,
   });

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_weather_app/features/fetch_weather/presentation/mobx/state/weather_store.dart';
-import 'package:flutter_weather_app/features/fetch_weather/presentation/pages/get_weather_page.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
+
+import 'features/get_weather/presentation/mobx/state/weather_store.dart';
+import 'features/get_weather/presentation/pages/get_weather_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

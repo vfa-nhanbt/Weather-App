@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
-import 'package:flutter_weather_app/features/fetch_weather/domain/entities/weather_main.dart';
+import 'package:flutter_weather_app/features/get_weather/domain/entities/weather_main.dart';
 
 class Weather extends Equatable {
   final String id;
