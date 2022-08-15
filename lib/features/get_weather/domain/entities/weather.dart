@@ -58,4 +58,9 @@ class Weather extends Equatable {
 
   @override
   List<Object> get props => [id, name, timezone, main];
+
+  DateTime get dateFromTimezone =>
+      DateTime.now().add(Duration(seconds: timezone));
+
+  double get celsiusTemp => (main.temp - 273.15);
 }
